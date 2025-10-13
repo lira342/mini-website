@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lerato-miniWebite></title>
+    <style>
+        .p-menu1{
+   height: 100%;
+}
+
+
+/* Hamburger */
 .hamburger1 {
   height: 45px;
   margin: 10px;
@@ -6,7 +19,6 @@
   grid-template-rows: repeat(3, 1fr);
   justify-items: right;
   z-index: 120;
-
 }
 
 .hamburger1 div {
@@ -83,8 +95,31 @@
 }
 
 .link1:hover {
-  background-color: #794848;
-  color: rgb(204, 206, 233);
+  background-color: #fff6f6;
+  color: rgb(228, 153, 68);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar" class="navigation" role="navigation">
+    <input id="toggle1" type="checkbox" />
+    <label class="hamburger1" for="toggle1">
+      <div class="top"></div>
+      <div class="meat"></div>
+      <div class="bottom"></div>
+    </label>
+  
+    <nav class="menu1">
+      <a class="link1" href="home.html">Home page</a>
+      <a class="link1" href="about.html">about</a>
+      <a class="link1" href="carrrer.html">Carrer-path</a>
+      <a class="link1" href="contact.html">Contact</a>
+    </nav>
+
+
+
+</body>
+</html>

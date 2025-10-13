@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Contact</title>
+    <style>
+      .contact{
+          position: relative;
+          min-height: 100vh;
+          padding: 50px 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #1b75bb;
+          background-size: cover;
+      }
+      .contact .content {
+          max-width: 800px;
+          text-align: center;
+      }
+      .contact .content h2 {
+          font-size: 36px;
+          font-weight: 500;
+          color: #fff;
+      }
+      .contact .content p {
+          font-weight: 300;
+          color: #fff;
+      }
+
+      .container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 30px;
+          gap: 30px;
+          flex-wrap: wrap;
+      }
+
+      .contactInfo {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 320px;
+          color: #fff;
+      }
+      .contactInfo .box {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          background: rgba(255,255,255,0.06);
+          padding: 14px;
+          border-radius: 8px;
+          width: 100%;
+          margin-bottom: 12px;
+      }
+      .contactInfo .box .icon {
+          min-width: 60px;
+          height: 60px;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          font-size: 22px;
+          color: #f36;
+      }
+      .contactInfo .box .text {
+          display: flex;
+          flex-direction: column;
+          font-size: 16px;
+          color: #fff;
+          font-weight: 300;
+      }
+      .contactInfo .box .text h3 {
+          margin: 0 0 4px 0;
+          font-weight: 500;
+          color: #fff;
+          font-size: 16px;
+      }
+      .contactInfo .box .text p {
+          margin: 0;
+          opacity: 0.9;
+      }
+
+      .contactForm {
+          width: 420px;
+          max-width: 100%;
+          padding: 32px;
+          background: #fff;
+          border-radius: 8px;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      }
+      .contactForm h2 {
+          font-size: 24px;
+          color: #333;
+          font-weight: 600;
+          margin: 0 0 8px 0;
+      }
+      .contactForm p.lead {
+          margin: 0 0 18px 0;
+          color: #666;
+          font-size: 14px;
+      }
+      .contactForm .inputBox {
+          position: relative;
+          width: 100%;
+          margin-top: 10px;
+      }
+      .contactForm .inputBox input,
+      .contactForm .inputBox textarea {
+          width: 100%;
+          padding: 8px 6px;
+          font-size: 15px;
+          margin: 10px 0;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          outline: none;
+          resize: vertical;
+      }
+      .contactForm .inputBox textarea { min-height: 120px; }
+
+      .contactForm .inputBox input[type="submit"] {
+          width: 120px;
+          background: #00bcd4;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+          padding: 10px;
+          font-size: 16px;
+          border-radius: 6px;
+          margin-top: 12px;
+      }
+
+      @media (max-width: 900px){
+          .contact{
+              padding: 40px 20px;
+          }
+          .container{
+              flex-direction: column;
+          }
+          .contactForm, .contactInfo {
+              width: 100%;
+              max-width: 520px;
+          }
+      }
+
+      footer {
+          background-color: #ff793b;
+          color: white;
+          padding: 10px;
+          text-align: center;
+          margin-top: 24px;
+          border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+   <nav id="navbar" class="navigation" role="navigation">
+    <input id="toggle1" type="checkbox" />
+    <label class="hamburger1" for="toggle1">
+      <div class="top"></div>
+      <div class="meat"></div>
+      <div class="bottom"></div>
+    </label>
+  
+    <nav class="menu1">
+      <a class="link1" href="home.html">Home page</a>
+      <a class="link1" href="about.html">about</a>
+      <a class="link1" href="carrrer.html">Carrer-path</a>
+      <a class="link1" href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+      <section class="contact" id="contact">
+        <div class="content">
+          
+        </div>
+
+        <div class="container">
+          
+
+          <div class="contactForm" aria-label="Send a message">
+            <form id="contactForm">
+              <h2>Send Message</h2>
+              <p class="lead"></p>       
+
+              <div class="inputBox">
+                <label for="fullName" class="sr-only">Full name</label>
+                <input
+                  id="fullName"
+                  type="text"
+                  name="fullName"
+                  placeholder="Full name"
+                  required
+                />
+              </div>
+
+              <div class="inputBox">
+                <label for="email" class="sr-only">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+
+              <div class="inputBox">
+                <label for="message" class="sr-only">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your message..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="inputBox">
+                <input type="submit" value="Send" />
+              </div>
+            </form>
+
+            <div
+              id="confirmationMessage"
+              aria-live="polite"
+              style="margin-top: 12px"
+            ></div>
+          </div>
+        </div>
+
+       
+      </section>
+    </main>
+
+    <!-- EmailJS (keep placeholders) -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      // Replace with your EmailJS public key, service ID and template ID
+      emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+
+      (function () {
+        const form = document.getElementById("contactForm");
+        const confirmation = document.getElementById("confirmationMessage");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const data = {
+            fullName: form.fullName.value,
+            email: form.email.value,
+            message: form.message.value,
+          };
+          emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", data).then(
+            function () {
+              form.reset();
+              confirmation.textContent = "Message sent successfully.";
+              setTimeout(() => (confirmation.textContent = ""), 5000);
+            },
+            function () {
+              confirmation.textContent =
+                "Failed to send message. Try again later.";
+              setTimeout(() => (confirmation.textContent = ""), 5000);
+            }
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

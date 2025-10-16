@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about page</title>
     <style>
+
+ body {
+    background-color: #f15a29; /* about & career background */
+    color: black;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    place-items: center;
+  }
+
         .p-menu1{
    height: 100%;
 }
@@ -22,7 +31,7 @@
 }
 
 .hamburger1 div {
-  background-color: rgb(61, 61, 61);
+  background-color: white;
   position: relative;
   width: 40px;
   height: 5px;
@@ -60,7 +69,7 @@
 /* Menu */
 .menu1 {
   width: 100%;
-  background-color: #1b75bb;
+  background-color: #f15a29;
   margin: 0;
   display: -ms-grid;
   display: grid;
@@ -95,15 +104,29 @@
 }
 
 .link1:hover {
-  background-color: #fff6f6;
+  background-color: #c07857;
   color: rgb(204, 206, 233);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-img{
-  align-content: center;
+
+
+.social{
+  position: absolute;
+  top: 12px;
+  right: 80px;
+  right: 1700px;
+  display: flex;
+  align-items: center;
+  z-index: 125;
 }
+
+.container img{
+  place-items: center;
+}
+
+
     </style>
 </head>
 <body>
@@ -125,7 +148,11 @@ img{
       <a class="link1" href="contact.html">Contact</a>
     </nav>
 
-
+<div class="social">
+      <a href="home.html" class="work-btn">
+         <img src="image/logo final.png" alt="logo" width="50" height="50" />
+      </a>
+    </div>
 
     <div class="heading">
       <h1>ABOUT ME</h1>

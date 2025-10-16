@@ -1,180 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about page</title>
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Page</title>
 
- body {
-    background-color: #f15a29; /* about & career background */
-    color: black;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    place-items: center;
-  }
+  <style>
+    body {
+      background-color: #f15a29; /* about & career background */
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      position: relative;
+    }
 
-        .p-menu1{
-   height: 100%;
-}
+    /* Heading */
+    .heading h1 {
+      color: white;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
 
+    /* Image and text container */
+    .img-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      max-width: 700px;
+    }
 
-/* Hamburger */
-.hamburger1 {
-  height: 45px;
-  margin: 10px;
-  display: -ms-grid;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  justify-items: right;
-  z-index: 120;
-}
+    .img-container img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+    }
 
-.hamburger1 div {
-  background-color: white;
-  position: relative;
-  width: 40px;
-  height: 5px;
-  margin-top: 7px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
+    .intro {
+      color: rgb(0, 0, 0);
+      font-size: 1.4rem;
+      margin: 0;
+    }
 
-#toggle1 {
-  display: none;
-}
+    .paragraph p {
+      color: rgb(0, 0, 0);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 10px 20px;
+    }
 
-#toggle1:checked + .hamburger1 .top {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  margin-top: 22.5px;
-}
+    /* Navigation styling */
+    .hamburger1 {
+      height: 45px;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      justify-items: right;
+      z-index: 120;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
 
-#toggle1:checked + .hamburger1 .meat {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  margin-top: -5px;
-}
+    .hamburger1 div {
+      background-color: white;
+      width: 40px;
+      height: 5px;
+      margin-top: 7px;
+      transition: all 0.2s ease-in-out;
+    }
 
-#toggle1:checked + .hamburger1 .bottom {
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
+    #toggle1 {
+      display: none;
+    }
 
-#toggle1:checked ~ .menu1 {
-  height: 340px;
-}
+    #toggle1:checked + .hamburger1 .top {
+      transform: rotate(-45deg);
+      margin-top: 22.5px;
+    }
 
+    #toggle1:checked + .hamburger1 .meat {
+      transform: rotate(45deg);
+      margin-top: -5px;
+    }
 
-/* Menu */
-.menu1 {
-  width: 100%;
-  background-color: #f15a29;
-  margin: 0;
-  display: -ms-grid;
-  display: grid;
-  grid-template-rows: 1fr repeat(4, 0.5fr);
-  grid-row-gap: 25px;
-  padding: 0;
-  list-style: none;
-  clear: both;
-  width: auto;
-  text-align: center;
-  height: 0px;
-  overflow: hidden;
-  transition: height .4s ease;
-  z-index: 120;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
+    #toggle1:checked + .hamburger1 .bottom {
+      transform: scale(0);
+    }
 
-.menu1 a:first-child {
-  margin-top: 40px;
-}
+    #toggle1:checked ~ .menu1 {
+      height: 340px;
+    }
 
-.menu1 a:last-child {
-  margin-bottom: 40px;
-}
+    .menu1 {
+      width: 100%;
+      background-color: #f15a29;
+      display: grid;
+      grid-template-rows: 1fr repeat(4, 0.5fr);
+      grid-row-gap: 25px;
+      text-align: center;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.4s ease;
+      position: fixed;
+      top: 70px;
+      right: 0;
+      left: 0;
+      z-index: 100;
+    }
 
-.link1 {
-  width: 100%;
-  margin: 0;
-  padding: 10px 0;
-  font: 700 20px 'Oswald', sans-serif;
-}
+    .link1 {
+      padding: 10px 0;
+      font: 700 20px 'Oswald', sans-serif;
+      text-decoration: none;
+      color: white;
+    }
 
-.link1:hover {
-  background-color: #c07857;
-  color: rgb(204, 206, 233);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
+    .link1:hover {
+      background-color: #c07857;
+      color: rgb(204, 206, 233);
+      transition: all 0.3s ease;
+    }
 
-
-
-.social{
-  position: absolute;
-  top: 12px;
-  right: 80px;
-  right: 1700px;
-  display: flex;
-  align-items: center;
-  z-index: 125;
-}
-
-.container img{
-  place-items: center;
-}
-
-
-    </style>
+    .social {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      z-index: 125;
+    }
+  </style>
 </head>
+
 <body>
-
-
-
-    <nav id="navbar" class="navigation" role="navigation">
+  <!-- Navigation -->
+  <nav id="navbar" class="navigation" role="navigation">
     <input id="toggle1" type="checkbox" />
     <label class="hamburger1" for="toggle1">
       <div class="top"></div>
       <div class="meat"></div>
       <div class="bottom"></div>
     </label>
-  
+
     <nav class="menu1">
       <a class="link1" href="home.html">Home page</a>
-      <a class="link1" href="about.html">about</a>
-      <a class="link1" href="carrrer.html">Carrer-path</a>
+      <a class="link1" href="about.html">About</a>
+      <a class="link1" href="career.html">Career Path</a>
       <a class="link1" href="contact.html">Contact</a>
     </nav>
 
-<div class="social">
+    <div class="social">
       <a href="home.html" class="work-btn">
-         <img src="image/logo final.png" alt="logo" width="50" height="50" />
+        <img src="image/logo final.png" alt="logo" width="50" height="50" />
       </a>
     </div>
+  </nav>
 
-    <div class="heading">
-      <h1>ABOUT ME</h1>
+  <!-- Content -->
+  <div class="heading">
+    <h1>ABOUT ME</h1>
+  </div>
+
+  <div class="img-container">
+    <img src="https://lh3.googleusercontent.com/a/ACg8ocJjuyAbL-9RguAQovt9tdp_0PSWqWxLJiWn-1jnlKf2U3L0zPS4=s288-c-no" alt="Lerato's photo" />
+
+    <h1 class="intro">My name is Lerato Diane, an Interactive Media student at NEMISA.</h1>
+
+    <div class="paragraph">
+      <p>
+        I am passionate about software development because it gives me the opportunity
+        to bring ideas to life, solve real-world problems, and make creative solutions
+        that positively impact people’s lives. I enjoy the challenge of writing clean
+        code and designing user experiences that blend creativity and functionality.
+      </p>
     </div>
-      
-
-    <div class="img-container">
-  <div class="image">
-    <a>
-      <img src="https://lh3.googleusercontent.com/a/ACg8ocJjuyAbL-9RguAQovt9tdp_0PSWqWxLJiWn-1jnlKf2U3L0zPS4=s288-c-no" alt="Lerato's photo" />
-    </a>
   </div>
-
-  <div>
-    <h1 class="intro">My name is Lerato Diane, a interactive media student in NEMISA.</h1>
-  </div>
-
-  <div class="paragraph">
-    <p>I am passionate about software development because it gives me the opportunity to  bring ideas to life, 
-solve real world problems and make creative solutions that make a positive impact on people’s lives. 
-I enjoy the challenge of writing  clean code and designing user experiences that blend creativity and functionality</p>
-  </div>
-    </div>
 </body>
-</html> 
+</html>

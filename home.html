@@ -1,177 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home page</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home page</title>
+  <style>
 
-       body {
-    background-color: #1b75bb; /* home background */
-    color: #ffffff;
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-        .p-menu1{
-   height: 100%;
-}
+    body {
+      background-color: #1b75bb; /* home background */
+      color: #ffffff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
 
+    .p-menu1 {
+      height: 100%;
+    }
 
-.navigation{
-  position: relative; /* container for absolute-positioned hamburger + social button */
-}
+    .navigation {
+      position: absolute; /* Keep nav fixed on top */
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
 
-/* Hamburger */
-.hamburger1 {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  height: 45px;
-  margin: 0;
-  display: -ms-grid;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  justify-items: right;
-  z-index: 120;
-}
+    /* Hamburger */
+    .hamburger1 {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      height: 45px;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      justify-items: right;
+      z-index: 120;
+    }
 
-.hamburger1 div {
-  background-color: rgb(255, 255, 255);
-  position: relative;
-  width: 40px;
-  height: 5px;
-  margin-top: 7px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
+    .hamburger1 div {
+      background-color: rgb(255, 255, 255);
+      width: 40px;
+      height: 5px;
+      margin-top: 7px;
+      transition: all 0.2s ease-in-out;
+    }
 
-#toggle1 {
-  display: none;
-}
+    #toggle1 {
+      display: none;
+    }
 
-#toggle1:checked + .hamburger1 .top {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  margin-top: 22.5px;
-}
+    #toggle1:checked + .hamburger1 .top {
+      transform: rotate(-45deg);
+      margin-top: 22.5px;
+    }
 
-#toggle1:checked + .hamburger1 .meat {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  margin-top: -5px;
-}
+    #toggle1:checked + .hamburger1 .meat {
+      transform: rotate(45deg);
+      margin-top: -5px;
+    }
 
-#toggle1:checked + .hamburger1 .bottom {
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
+    #toggle1:checked + .hamburger1 .bottom {
+      transform: scale(0);
+    }
 
-#toggle1:checked ~ .menu1 {
-  height: 340px;
-}
+    #toggle1:checked ~ .menu1 {
+      height: 340px;
+    }
 
+    /* Menu */
+    .menu1 {
+      background-color: #1b75bb;
+      display: grid;
+      grid-template-rows: 1fr repeat(4, 0.5fr);
+      grid-row-gap: 25px;
+      list-style: none;
+      text-align: center;
+      height: 0px;
+      overflow: hidden;
+      transition: height 0.4s ease;
+      z-index: 120;
+    }
 
-/* Menu */
-.menu1 {
-  width: 100%;
-  background-color: #1b75bb;;
-  margin: 0;
-  display: -ms-grid;
-  display: grid;
-  grid-template-rows: 1fr repeat(4, 0.5fr);
-  grid-row-gap: 25px;
-  padding: 0;
-  list-style: none;
-  clear: both;
-  width: auto;
-  text-align: center;
-  height: 0px;
-  overflow: hidden;
-  transition: height .4s ease;
-  z-index: 120;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
+    .menu1 a:first-child {
+      margin-top: 40px;
+    }
 
-.menu1 a:first-child {
-  margin-top: 40px;
-}
+    .menu1 a:last-child {
+      margin-bottom: 40px;
+    }
 
-.menu1 a:last-child {
-  margin-bottom: 40px;
-}
+    .link1 {
+      width: 100%;
+      margin: 0;
+      padding: 10px 0;
+      font: 700 20px 'Oswald', sans-serif;
+      text-decoration: none;
+      color: white;
+    }
 
-.link1 {
-  width: 100%;
-  margin: 0;
-  padding: 10px 0;
-  font: 700 20px 'Oswald', sans-serif;
-}
+    .link1:hover {
+      background-color: #487ff5;
+      color: rgb(204, 206, 233);
+      transition: all 0.3s ease;
+    }
 
-.link1:hover {
-  background-color: #487ff5;
-  color: rgb(204, 206, 233);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
+    /* social button aligned with hamburger */
+    .social {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      align-items: center;
+      z-index: 125;
+    }
 
-/* social button aligned with hamburger (to left of it) */
-.social{
-  position: absolute;
-  top: 12px;
-  right: 80px;
-  right: 1650px;
-  display: flex;
-  align-items: center;
-  z-index: 125;
-}
+    .social .work-btn {
+      color: #1b75bb;
+      display: inline-block;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+    }
 
-.social .work-btn {
-    color: #1b75bb;
-    display: inline-block;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 20px;
-}
+    /* Centered logo in page */
+    .center-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
 
-/* responsive adjustments */
-@media (max-width: 480px) {
-  .hamburger1 { top: 10px; right: 10px; }
-  .social { right: 62px; top: 10px; }
-  .social .work-btn { padding: 8px 14px; font-size: 14px; }
-}
+    .center-logo img {
+      width: 500px;
+      height: auto;
+    }
 
+    @media (max-width: 480px) {
+      .hamburger1 { top: 10px; right: 10px; }
+      .social { left: 10px; top: 10px; }
+      .social .work-btn { padding: 8px 14px; font-size: 14px; }
+      .center-logo img { width: 150px; }
+    }
 
-    </style>
+  </style>
 </head>
 <body>
-    
-  
 
-   <div class="navigation">
+  <div class="navigation">
     <nav id="navbar" class="navigation" role="navigation">
-    <input id="toggle1" type="checkbox" />
-    <label class="hamburger1" for="toggle1">
-      <div class="top"></div>
-      <div class="meat"></div>
-      <div class="bottom"></div>
-    </label>
+      <input id="toggle1" type="checkbox" />
+      <label class="hamburger1" for="toggle1">
+        <div class="top"></div>
+        <div class="meat"></div>
+        <div class="bottom"></div>
+      </label>
 
-    <!-- social button moved inside .navigation so it aligns with hamburger -->
-    <div class="social">
-      <a href="home.html" class="work-btn">
-         <img src="/image/logo final.png" alt="logo" width="50" height="50" />
-      </a>
-    </div>
-  
-    <nav class="menu1">
-      <a class="link1" href="home.html">Home page</a>
-      <a class="link1" href="about.html">about</a>
-      <a class="link1" href="carrrer.html">Carrer-path</a>
-      <a class="link1" href="contact.html">Contact</a>
+      <!-- Social/logo button -->
+      <div class="social">
+        <a href="home.html" class="work-btn">
+          <img src="/image/logo final.png" alt="logo" width="50" height="50" />
+        </a>
+      </div>
+
+      <!-- Navigation menu -->
+      <nav class="menu1">
+        <a class="link1" href="home.html">Home page</a>
+        <a class="link1" href="about.html">About</a>
+        <a class="link1" href="carrrer.html">Career-path</a>
+        <a class="link1" href="contact.html">Contact</a>
+      </nav>
     </nav>
+  </div>
+
+  <!-- Centered main image -->
+  <div class="center-logo">
+    <img src="/image/logo.jpg" alt="logo">
   </div>
 
 </body>

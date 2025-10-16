@@ -5,15 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home page</title>
     <style>
+
+       body {
+    background-color: #1b75bb; /* home background */
+    color: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
         .p-menu1{
    height: 100%;
 }
 
 
+.navigation{
+  position: relative; /* container for absolute-positioned hamburger + social button */
+}
+
 /* Hamburger */
 .hamburger1 {
+  position: absolute;
+  top: 12px;
+  right: 12px;
   height: 45px;
-  margin: 10px;
+  margin: 0;
   display: -ms-grid;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -22,7 +37,7 @@
 }
 
 .hamburger1 div {
-  background-color: rgb(61, 61, 61);
+  background-color: rgb(255, 255, 255);
   position: relative;
   width: 40px;
   height: 5px;
@@ -60,7 +75,7 @@
 /* Menu */
 .menu1 {
   width: 100%;
-  background-color: #f9fbff;
+  background-color: #1b75bb;;
   margin: 0;
   display: -ms-grid;
   display: grid;
@@ -95,21 +110,40 @@
 }
 
 .link1:hover {
-  background-color: #fff6f6;
+  background-color: #487ff5;
   color: rgb(204, 206, 233);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
+/* social button aligned with hamburger (to left of it) */
+.social{
+  position: absolute;
+  top: 12px;
+  right: 80px;
+  right: 1650px;
+  display: flex;
+  align-items: center;
+  z-index: 125;
+}
+
 .social .work-btn {
     color: #1b75bb;
-    background-color: #f15a29;
     display: inline-block;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
     padding: 10px 20px;
 }
+
+/* responsive adjustments */
+@media (max-width: 480px) {
+  .hamburger1 { top: 10px; right: 10px; }
+  .social { right: 62px; top: 10px; }
+  .social .work-btn { padding: 8px 14px; font-size: 14px; }
+}
+
+
     </style>
 </head>
 <body>
@@ -124,6 +158,13 @@
       <div class="meat"></div>
       <div class="bottom"></div>
     </label>
+
+    <!-- social button moved inside .navigation so it aligns with hamburger -->
+    <div class="social">
+      <a href="home.html" class="work-btn">
+         <img src="/image/logo final.png" alt="logo" width="50" height="50" />
+      </a>
+    </div>
   
     <nav class="menu1">
       <a class="link1" href="home.html">Home page</a>
@@ -133,15 +174,5 @@
     </nav>
   </div>
 
-
-
-
-
-</div>
-
-
-    <div class="social">
-          <a href="about.html" class="work-btn">Learn more</a>
-      </div>
 </body>
 </html>
